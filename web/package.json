@@ -42,6 +42,6 @@
         "webpack-dev-server": "^4.5.0"
     },
     "dependencies": {
-        "axios": "^0.22.0"
+        "axios": "^1.6.0"
     }
 }
