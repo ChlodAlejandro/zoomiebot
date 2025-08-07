@@ -1,0 +1,4 @@
+#!/bin/bash
+curl 'https://th.wikipedia.org/w/api.php' -X POST -H 'User-Agent: Zoomiebot/0.0.0 (https://w.wiki/3Yti; chlod@chlod.net; User:Chlod)' -H 'Content-Type: application/x-www-form-urlencoded' --data-raw 'action=purge&titles=%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81&format=json&formatversion=2'
+sleep 10
+curl 'https://web.archive.org/save/https://th.wikipedia.org/wiki/%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81' -X POST -H 'User-Agent: Zoomiebot/0.0.0 (https://w.wiki/3Yti; chlod@chlod.net; User:Chlod)' -H 'Content-Type: application/x-www-form-urlencoded' --data-raw 'url=https%3A%2F%2Fth.wikipedia.org%2Fwiki%2F%25E0%25B8%25AB%25E0%25B8%2599%25E0%25B9%2589%25E0%25B8%25B2%25E0%25B8%25AB%25E0%25B8%25A5%25E0%25B8%25B1%25E0%25B8%2581&capture_all=on'
