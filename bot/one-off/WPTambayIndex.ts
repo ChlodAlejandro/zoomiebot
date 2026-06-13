@@ -2,7 +2,7 @@ import { ApiResponse } from "mwn";
 import OneOffTask from "./OneOffTask";
 
 export default (async () => {
-    const taskName = "WikiProject Philippines Indexer";
+    const taskName = "WikiProject Tambayan Philippines Indexer";
     const { log, bot } = await OneOffTask.create(taskName);
 
     /**
@@ -105,9 +105,9 @@ export default (async () => {
 
     for (const [name, set] of Object.entries(sets)) {
         await bot.save(
-            `User:Zoomiebot/${taskName}/${name}`,
+            `User:Zoomiebot/WikiProject Tambayan Philippines Index/${name}`,
             [...set].map(p => `* {{la2|${p}}}`).join("\n"),
-            `(bot) Updating [[User:Zoomiebot/${taskName}|WikiProject Tambayan Philippines]] page indexes ([[User:Zoomiebot/${taskName}#${name}|${name}]])`
+            `(bot) Updating [[User:Zoomiebot/WikiProject Tambayan Philippines Index|WikiProject Tambayan Philippines]] page indexes ([[User:Zoomiebot/WikiProject Tambayan Philippines Index#${name}|${name}]])`
         );
     }
 
