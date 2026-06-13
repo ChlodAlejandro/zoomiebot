@@ -12,6 +12,7 @@
         "run:test-task": "node -r ts-node/register bot/one-off/TestTask.ts",
         "run:wptc-index": "node -r ts-node/register bot/one-off/WPTCIndex.ts",
         "run:pagasa-archiver": "node -r ts-node/register bot/one-off/PagasaArchiver.ts",
+        "run:wptambay-index": "node -r ts-node/register bot/one-off/WPTambayIndex.ts",
         "version": "cross-env-shell \"npm version $npm_package_version --no-git-tag-version --workspaces\" && git add **/package*.json"
     },
     "workspaces": [

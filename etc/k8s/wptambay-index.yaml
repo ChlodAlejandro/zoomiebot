@@ -1,0 +1,35 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+    name: zoomiebot.wptambay-index
+    labels:
+        name: zoomiebot.wptambay-index
+        toolforge: tool
+spec:
+    schedule: "0 * * * *"
+    concurrencyPolicy: Replace
+    jobTemplate:
+        spec:
+            template:
+                metadata:
+                    labels:
+                        toolforge: tool
+                spec:
+                    containers:
+                        -   name: zoomiebot-wptambay-index
+                            image: docker-registry.tools.wmflabs.org/toolforge-bullseye-sssd:latest
+                            command: [
+                              # Start sh first to get run .profile data
+                                    "/usr/bin/sh",
+                              # Initialize environment
+                                    "/data/project/zoomiebot/project/scripts/one-off.sh",
+                              # Script to start
+                                    "wptambay-index"
+                            ]
+                            workingDir: /data/project/zoomiebot
+                            env:
+                                -   name: HOME
+                                    value: /data/project/zoomiebot
+                            imagePullPolicy: Always
+                    restartPolicy: OnFailure
