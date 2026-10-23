@@ -19,12 +19,6 @@ metadata:
     namespace: tool-zoomiebot
 spec:
     replicas: 1
-    selector:
-        matchLabels:
-            app.kubernetes.io/component: web
-            app.kubernetes.io/managed-by: webservice
-            name: zoomiebot
-            toolforge: tool
     template:
         metadata:
             labels:
